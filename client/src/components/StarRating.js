@@ -59,7 +59,7 @@ export default function StarRating(props) {
         );
         })}
         <form onSubmit={handleSubmit}>
-        <button type="submit"> Save your Rating</button>
+        <button type="submit"> Save your Rating !</button>
         </form>
       </div>
       </>
