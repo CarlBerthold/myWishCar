@@ -13,6 +13,7 @@
     "bootstrap": "^5.1.1",
     "cloudinary": "^1.27.0",
     "cloudinary-react": "^1.7.0",
+    "concurrently": "^6.3.0",
     "connect-mongo": "^4.6.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
