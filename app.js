@@ -18,7 +18,7 @@ require("./config")(app);
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-const DB_URL = "mongodb://localhost/myWishCar"
+const DB_URL = process.env.MONGO_URI 
 
 app.use(
 	session({

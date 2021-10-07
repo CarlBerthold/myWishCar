@@ -9,7 +9,8 @@ const carSchema = new Schema({
   preis: Number,
   rating: Number,
   imgUrl: String,
-  timesRating: Number
+  timesRating: Number,
+  review: []
 });
 
 const Car = model("Car", carSchema);
