@@ -7,12 +7,26 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "@mui/material": "^5.0.2",
+    "@mui/styled-engine-sc": "^5.0.0",
+    "bcrypt": "^5.0.1",
+    "bootstrap": "^5.1.1",
+    "cloudinary": "^1.27.0",
+    "cloudinary-react": "^1.7.0",
+    "connect-mongo": "^4.6.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "material-components-web": "^13.0.0",
     "mongoose": "^6.0.8",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "multer-storage-cloudinary": "^4.0.0",
+    "react-bootstrap": "^2.0.0-rc.0",
+    "react-simple-star-rating": "^3.0.0",
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"

@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+.Rating {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color:gold;
+}
+.off {
+  color: #ccc;
+}
+
