@@ -12,7 +12,7 @@ export default function AddCar(props) {
     const [baujahr, setBaujahr] = useState(Number);
     const [kilometer, setKilometer] = useState(Number);
     const [preis, setPreis] = useState(Number);
-    const [rating, setRating] = useState(Number);
+    // const [rating, setRating] = useState(Number);
     const [imgUrl, setImgUrl] = useState('');
 	const [timesRating, setTimesRating] = useState(Number);
 
@@ -44,14 +44,14 @@ export default function AddCar(props) {
 		//props.setCars();
 
 		service
-		.saveNewCar({ marke, modell, baujahr, kilometer, preis, rating, imgUrl, timesRating })
+		.saveNewCar({ marke, modell, baujahr, kilometer, preis, imgUrl, timesRating })
 		.then(res => {
 			console.log("added new Car ", res);
 		})
 		.catch(err => console.log("Error while adding the new car", err))
 
 		// make a post request to the server with the form fields in the body
-		const requestBody = { marke, modell, baujahr, kilometer, preis, rating, imgUrl, timesRating };
+		const requestBody = { marke, modell, baujahr, kilometer, preis, imgUrl, timesRating };
 		axios.post('/api/cars/addCar', requestBody)
 			.then(car => {
 				// reset the state and thereby reset the form
@@ -60,7 +60,7 @@ export default function AddCar(props) {
                 setBaujahr(Number);
                 setKilometer(Number);
                 setPreis(Number);
-                setRating(Number);
+                // setRating(Number);
                 setImgUrl('');
 				setTimesRating(Number)
 				// we need to trigger 'getAllProjects' in the ProjectListPage component
@@ -74,40 +74,41 @@ export default function AddCar(props) {
 		<div>
 			<h1>add a car</h1>
 			<form onSubmit={handleSubmit}>
-				<label htmlFor="marke">Marke: </label>
+				<label htmlFor="marke">Car brand: </label>
 				<input type="text" name="marke" value={marke}
 				onChange={e => setMarke(e.target.value)}
 				/>
 				<br></br>
-				<label htmlFor="modell">Modell: </label>
+				<label htmlFor="modell">Model: </label>
 				<input type="text" name="modell" value={modell}
 				onChange={e => setModell(e.target.value)}
 				/>
 				<br></br>
-                <label htmlFor="baujahr">Baujahr: </label>
+                <label htmlFor="baujahr">Year: </label>
                 <input type="Number" name="baujahr"value={baujahr}
 				onChange={e => setBaujahr(e.target.value)}
 				/>
 				<br></br>
-                <label htmlFor="kilometer">Kilometer: </label>
+                <label htmlFor="kilometer">Miles: </label>
                 <input type="Number" name="kilometer" value={kilometer}
 				onChange={e => setKilometer(e.target.value)}
 				/>
 				<br></br>
-                <label htmlFor="preis">€ Preis: </label>
+                <label htmlFor="preis">€ Price: </label>
                 <input type="Number" name="preis" value={preis}
 				onChange={e => setPreis(e.target.value)}
 				/>
 				<br></br>
-                <label htmlFor="rating">Rating: </label>
+                {/* <label htmlFor="rating">Rating: </label>
                 <input type="Number" name="rating" max="5" value={rating}
 				onChange={e => setRating(e.target.value)}
-				/>
+				/> */}
 				<br></br>
-                <label htmlFor="imgUrl">Img: </label>
+                <label htmlFor="imgUrl">Picture: </label>
                 <input type="File" name="imgUrl"
 				onChange={handleFileUpload} />
 				{imgUrl && <img src={imgUrl} style={{ height: '150px '}}/> } 
+				<br></br>
 				<br></br>
 				<button type="submit" class="btn btn-dark">Add this Car</button>
 				{/* <button type="submit">Add this Car</button> */}

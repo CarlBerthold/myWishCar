@@ -30,14 +30,6 @@ export default function CarsDeatails(props) {
 		<div>
             {car && (
 				<>
-
-{/* <div className="card" style="width: 18rem;">
-  <img src="..." className="card-img-top" alt="..." />
-  <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div> */}
                 <div class="ratio ratio-4x3">
                     <img src={car.imgUrl} />
                 </div>
@@ -47,9 +39,10 @@ export default function CarsDeatails(props) {
     					<li class="list-group-item">Model: {car.modell}</li>
     					<li class="list-group-item">Year: {car.baujahr}</li>
     					<li class="list-group-item">Miles: {car.kilometer}</li>
-						<li class="list-group-item">Price: {car.preis}</li>
+						<li class="list-group-item">Price: {car.preis}€</li>
   					</ul>
 					<li class="list-group-item"><StarRating {...props}/></li>
+
 				</div>
 
 

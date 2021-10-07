@@ -9,7 +9,7 @@ import Login from './pages/Login';
 import CarsList from './pages/CarsList';
 import CarsDetails from './pages/CarsDetails';
 import AddCar from './components/AddCar';
-// import StarRating from './components/StarRating';
+import Footer from './components/Footer';
 
 function App(props) {
 
@@ -31,10 +31,14 @@ function App(props) {
             <Route exact path="/Login" render={props => <Login setUser={addUser} {...props} /> } />
             <Route exact path="/HomePage" user={user} component={HomePage}/>
             <Route exact path="/" component={LandingPage} />
-            {/* <Route exact path="/Cars/:id" user={user} component={StarRating} /> */}
           </Switch>
+        <Footer user={user} component={Footer} />
     </div>
   );
 }
+
+
+
+
 
 export default App;

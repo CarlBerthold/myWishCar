@@ -33,6 +33,11 @@ export default function Signup(props) {
 
 	return (
 		<>
+
+			<div>
+			<img src="Key.jpg" width="1000px" height="800px" />
+			</div>
+			<br></br>
 			<h3>Signup</h3>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor="username">Username: </label>
@@ -42,6 +47,7 @@ export default function Signup(props) {
 					value={username}
 					onChange={e => setUsername(e.target.value)}
 				/>
+				<br></br>
 				<label htmlFor="password">Password: </label>
 				<input
 					type="password"
@@ -49,12 +55,15 @@ export default function Signup(props) {
 					value={password}
 					onChange={e => setPassword(e.target.value)}
 				/>
+				<br></br>
+				<span>
 				<button type="submit">Sign Up ✍️</button>
 				{message && (
 					<h3>{message}</h3>
 				)}
+				</span>
 			</form>
-			<img src="Key.jpg" width="800px" height="500px" />
+			
 		</>
 	)
 }

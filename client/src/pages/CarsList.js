@@ -13,7 +13,9 @@ export default function CarsList() {
 
     const [search, setSearch] = useState ('');
     const [cars, setCars]= useState([]);
-    const [rating, setRating]=useState('')
+    const [rating, setRating]= useState('')
+    const [baujahr, setBaujahr]= useState('')
+
 
 
     const getAllCars = () => {
@@ -33,36 +35,45 @@ export default function CarsList() {
         
     }, [])
 
-    const options = [...new Set(cars.map(car => car.rating))].map(rating => {
+    const ratingOptions = [...new Set(cars.map(car => car.rating))].map(rating => {
         return <option value={rating} key={rating}>{rating}</option>
-      });
-
-    const filteredCars = cars.filter(
-    car =>`${car.marke}${car.modell}`.toLowerCase().includes(search.toLowerCase())
-    );
-    
-      const searchedCar = filteredCars.map(car => {
-        return <tr key={car.id}>
-          <td>{car.marke}</td>
-          <td>{car.modell}</td>
-        </tr>
-      });
-
+    });
+    const yearOptions = [...new Set(cars.map(car => car.baujahr))].map(baujahr => {
+        return <option value={baujahr} key={baujahr}>{baujahr}</option>
+    });
+    const filteredCars = cars.filter(car => { 
+        return`${car.marke}${car.modell}`.toLowerCase().includes(search.toLowerCase())
+        && (car.rating == rating || !rating)
+        && (car.baujahr == baujahr || !baujahr)
+    });
     return (
         <>
+    <div>
+        <h1>All the Cars</h1>
+    </div>
         <div>
-
+            <div class="container">
+        <div class="row align-items-start">
+            <div class="col">
+            <select name="rating" value={rating} onChange={e => setRating(e.target.value)}>
+                <option value="">filter for Rating </option>
+                {ratingOptions}
+            </select>
         </div>
-        <div>
-            <h1>All the Cars</h1>
-                <input type="text" name="search" value={search} onChange={e => setSearch(e.target.value)} />
-                <select name="rating" value={rating} onChange={e => setRating(e.target.value)}>
-                <option value="">All</option>
-                {options}
-                </select>
-
+            <div class="col">
+            <input type="text" name="search" value={search} onChange={e => setSearch(e.target.value)} />
+            Search a car
+            
+        </div>
+            <div class="col">
+            <select name="year" value={baujahr} onChange={e => setBaujahr(e.target.value)}>
+                <option value="">filter for Year </option>
+                {yearOptions}
+            </select>
+            </div>
+        </div>
 		        {filteredCars.map(car => <CarCard key={car._id} {...car} />)}
-                {/* {options.map(car => <CarCard key={car.rating} {...cars} /> )} */}
+        </div>
         </div>
 
         <div>

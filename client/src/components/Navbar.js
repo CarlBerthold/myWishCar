@@ -37,12 +37,16 @@ export default function Navbar(props) {
 				</>
 			) : (
 				<>
+					<div className="p-3 mb-2 bg-info text-dark bg-opacity-50">
+					<div className="d-flex justify-content-between">
 					<Link to="/signup">
 					<button className="btn btn-outline-dark">Sign up</button>
 					</Link>
 					<Link to="/login">
 					<button className="btn btn-outline-dark">Login</button>
 					</Link>
+					</div>
+					</div>
 				</>
 			)}
 		</nav>

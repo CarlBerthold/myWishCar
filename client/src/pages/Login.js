@@ -24,7 +24,7 @@ export default function Login(props) {
 					// user is correctly signed up in the backend
 					// add the user to the state of App.js
 					props.setUser(response);
-					alert('welcome', response.username)
+					console.log(response.username)
 					// redirect to the projects overview
 					props.history.push('/HomePage', response.username);
 				}
@@ -34,6 +34,11 @@ export default function Login(props) {
 
 	return (
 		<>
+		<div>
+		<div>
+		<img src="Key.jpg" width="1000px" height="800px" />
+		</div>
+		<br></br>
 			<h3>Login</h3>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor="username">Username: </label>
@@ -43,6 +48,7 @@ export default function Login(props) {
 					value={username}
 					onChange={e => setUsername(e.target.value)}
 				/>
+				<br></br>
 				<label htmlFor="password">Password: </label>
 				<input
 					type="password"
@@ -50,12 +56,14 @@ export default function Login(props) {
 					value={password}
 					onChange={e => setPassword(e.target.value)}
 				/>
+				<br></br>
 				<button type="submit">Log in 🔑</button>
 				{message && (
 					<h3>{message}</h3>
 				)}
 			</form>
-			<img src="Key.jpg" width="800px" height="500px" />
+			
+			</div>
 		</>
 	)
 }
