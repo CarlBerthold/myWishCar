@@ -33,9 +33,9 @@ export default function CarsList() {
         
     }, [])
 
-    const options = [...new Set(cars.map(car => car.rating))].map(rating => {
-        return <option value={rating} key={rating}>{rating}</option>
-      });
+    // const options = [...new Set(cars.map(car => car.rating))].map(rating => {
+    //     return <option value={rating} key={rating}>{rating}</option>
+    //   });
 
     const filteredCars = cars.filter(
     car =>`${car.marke}${car.modell}`.toLowerCase().includes(search.toLowerCase())
