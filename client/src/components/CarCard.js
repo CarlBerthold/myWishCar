@@ -5,14 +5,14 @@ export default function CarCard({ marke, modell, baujahr, kilometer, preis, rati
 	console.log(marke);
 	return (
 		<>
-
-
 		
-	<h1>{marke}</h1>
-	<h3>{modell}</h3>
-	<Link to={`/cars/${_id}`}>
-      <img src={imgUrl} />
-	  </Link>
+			<div className="CarHeading">
+				<h1>{marke}</h1>
+				<h3>{modell}</h3>
+			</div>
+		<Link to={`/cars/${_id}`}>
+      		<img className="CarCard" src={imgUrl} />
+	  	</Link>
 
 	  
 

@@ -29,10 +29,11 @@ function App(props) {
             <Route exact path="/CarsList" component={CarsList} />
             <Route exact path="/Signup" render={props => <Signup setUser={addUser} {...props} />} />
             <Route exact path="/Login" render={props => <Login setUser={addUser} {...props} /> } />
-            <Route exact path="/HomePage" user={user} component={HomePage}/>
+            <Route exact path="/HomePage" render={props => <HomePage user={user} {...props}/>} />
             <Route exact path="/" component={LandingPage} />
+            <Footer user={user} component={Footer} />
           </Switch>
-        <Footer user={user} component={Footer} />
+        
     </div>
   );
 }

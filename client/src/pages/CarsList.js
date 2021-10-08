@@ -51,7 +51,7 @@ export default function CarsList() {
     <div>
         <h1>All the Cars</h1>
     </div>
-        <div>
+        <div className="select">
             <div class="container">
         <div class="row align-items-start">
             <div class="col">
@@ -72,6 +72,7 @@ export default function CarsList() {
             </select>
             </div>
         </div>
+
 		        {filteredCars.map(car => <CarCard key={car._id} {...car} />)}
         </div>
         </div>

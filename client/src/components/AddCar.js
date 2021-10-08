@@ -67,10 +67,12 @@ export default function AddCar(props) {
 				props.refreshCars();
 			})
 			.catch(err => console.log(err))
+			alert('car was added')
 	}
 
 	return (
-		<div class="d-flex justify-content-center">
+		
+		<div className="AddCarBox">
 		<div>
 			<h1>add a car</h1>
 			<form onSubmit={handleSubmit}>
