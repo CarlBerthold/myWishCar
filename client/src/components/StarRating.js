@@ -36,6 +36,7 @@ export default function StarRating(props) {
              props.history.push('/CarsList')
         })
         .catch(err => console.log(err))
+        alert('thanks for your rating')
         
     
     }    

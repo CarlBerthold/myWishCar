@@ -68,6 +68,7 @@ export default function AddCar(props) {
 			})
 			.catch(err => console.log(err))
 			alert('car was added')
+			props.history.push('/CarsList')
 	}
 
 	return (
