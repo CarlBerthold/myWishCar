@@ -25,7 +25,7 @@ export default function CarsList() {
             setCars(cars.data);
             
         })
-        .catch(err => console.log(err));
+        //.catch(err => console.log(err));
     }
 
 
